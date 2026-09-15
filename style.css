@@ -1,0 +1,806 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Pacifico&display=swap');
+
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    min-height: 100vh;
+
+    font-family: 'Poppins', sans-serif;
+
+    background:
+        radial-gradient(circle at top left, #ffd8e8, transparent 35%),
+        radial-gradient(circle at bottom right, #ffc1da, transparent 35%),
+        linear-gradient(135deg, #fff1f7, #ffdbea);
+
+    color: #54243a;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.container {
+    width: min(1100px, 92%);
+
+    margin: auto;
+
+    min-height: 100vh;
+
+    padding:
+        60px 0
+        50px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================================
+   TEDDY SECTION
+========================================= */
+
+.teddy-section {
+    min-height: 310px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 30px;
+
+    position: relative;
+
+    animation: teddyAppear 1.2s ease;
+}
+
+
+/* =========================================
+   TEDDY
+========================================= */
+
+.teddy {
+    width: 145px;
+    height: 200px;
+
+    position: relative;
+
+    animation: teddyFloat 3s ease-in-out infinite;
+}
+
+
+.teddy-right {
+    animation-delay: .7s;
+}
+
+
+/* =========================================
+   HEAD
+========================================= */
+
+.head {
+    width: 125px;
+    height: 115px;
+
+    position: absolute;
+
+    top: 5px;
+    left: 10px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #ffe0c7,
+            #d58b58
+        );
+
+    box-shadow:
+        inset -8px -8px 0 rgba(0,0,0,.06),
+        0 10px 25px rgba(100,40,40,.15);
+}
+
+
+/* =========================================
+   EARS
+========================================= */
+
+.ear {
+    width: 45px;
+    height: 45px;
+
+    position: absolute;
+
+    top: 0;
+
+    border-radius: 50%;
+
+    background: #c9794b;
+
+    z-index: -1;
+}
+
+
+.left-ear {
+    left: 0;
+}
+
+
+.right-ear {
+    right: 0;
+}
+
+
+/* =========================================
+   EYES
+========================================= */
+
+.eye {
+    width: 10px;
+    height: 14px;
+
+    position: absolute;
+
+    top: 47px;
+
+    border-radius: 50%;
+
+    background: #3b2020;
+}
+
+
+.left-eye {
+    left: 36px;
+}
+
+
+.right-eye {
+    right: 36px;
+}
+
+
+/* =========================================
+   NOSE
+========================================= */
+
+.nose {
+    width: 20px;
+    height: 16px;
+
+    position: absolute;
+
+    top: 64px;
+    left: 52px;
+
+    border-radius: 50%;
+
+    background: #512b28;
+}
+
+
+/* =========================================
+   MOUTH
+========================================= */
+
+.mouth {
+    width: 22px;
+    height: 10px;
+
+    position: absolute;
+
+    top: 78px;
+    left: 51px;
+
+    border-bottom:
+        3px solid #512b28;
+
+    border-radius: 0 0 50% 50%;
+}
+
+
+/* =========================================
+   BODY
+========================================= */
+
+.body {
+    width: 105px;
+    height: 105px;
+
+    position: absolute;
+
+    top: 95px;
+    left: 20px;
+
+    border-radius:
+        48% 48% 35% 35%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #e8a16c,
+            #c77749
+        );
+
+    box-shadow:
+        0 12px 25px rgba(100,40,40,.14);
+}
+
+
+/* =========================================
+   ARMS
+========================================= */
+
+.arm {
+    width: 55px;
+    height: 27px;
+
+    position: absolute;
+
+    top: 118px;
+
+    border-radius: 50px;
+
+    background: #c9794b;
+}
+
+
+.left-arm {
+    left: 0;
+
+    transform: rotate(35deg);
+}
+
+
+.right-arm {
+    right: 0;
+
+    transform: rotate(-35deg);
+}
+
+
+/* =========================================
+   HEART BETWEEN TEDDIES
+========================================= */
+
+.heart-between {
+    font-size: 48px;
+
+    z-index: 5;
+
+    animation:
+        heartBeat 1.2s infinite;
+
+    filter:
+        drop-shadow(
+            0 5px 10px rgba(255,40,100,.3)
+        );
+}
+
+
+/* =========================================
+   NAMES
+========================================= */
+
+.names-section {
+    text-align: center;
+
+    margin-top: 15px;
+
+    animation:
+        fadeUp 1s ease .3s both;
+}
+
+
+.couple-names {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+    font-size: clamp(30px, 6vw, 55px);
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: #8d3156;
+
+    text-shadow:
+        0 5px 15px rgba(150,50,90,.15);
+}
+
+
+.couple-names b {
+    font-size: .65em;
+
+    color: #ed5c8b;
+
+    animation:
+        heartBeat 1.5s infinite;
+}
+
+
+.start-date {
+    margin-top: 8px;
+
+    font-size: 15px;
+
+    color: #8f6374;
+
+    font-weight: 500;
+}
+
+
+/* =========================================
+   COUNTER
+========================================= */
+
+.counter {
+    margin-top: 45px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(6, 1fr);
+
+    gap: 15px;
+}
+
+
+.time-box {
+    padding: 22px 10px;
+
+    text-align: center;
+
+    border-radius: 20px;
+
+    background:
+        rgba(255,255,255,.65);
+
+    border:
+        1px solid rgba(255,255,255,.9);
+
+    box-shadow:
+        0 15px 35px rgba(100,40,70,.12);
+
+    backdrop-filter: blur(12px);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+
+.time-box:hover {
+    transform:
+        translateY(-7px);
+
+    box-shadow:
+        0 20px 40px rgba(100,40,70,.18);
+}
+
+
+.time-box strong {
+    display: block;
+
+    font-size: clamp(25px, 4vw, 38px);
+
+    font-weight: 700;
+
+    color: #bd416d;
+
+    line-height: 1.2;
+}
+
+
+.time-box span {
+    display: block;
+
+    margin-top: 7px;
+
+    font-size: 13px;
+
+    color: #8d6876;
+
+    font-weight: 500;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================
+   MESSAGE
+========================================= */
+
+.message {
+    max-width: 700px;
+
+    margin:
+        45px auto 0;
+
+    padding: 30px;
+
+    text-align: center;
+
+    border-radius: 25px;
+
+    background:
+        rgba(255,255,255,.55);
+
+    border:
+        1px solid rgba(255,255,255,.8);
+
+    box-shadow:
+        0 15px 35px rgba(100,40,70,.1);
+
+    backdrop-filter: blur(10px);
+
+    animation:
+        fadeUp 1s ease .6s both;
+}
+
+
+.message h2 {
+    font-family: 'Pacifico', cursive;
+
+    font-size: 28px;
+
+    color: #b63e69;
+
+    margin-bottom: 12px;
+}
+
+
+.message p {
+    color: #7e5a69;
+
+    line-height: 1.8;
+
+    font-size: 14px;
+}
+
+
+.love-line {
+    margin-top: 18px;
+
+    font-weight: 700;
+
+    color: #e05282;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================
+   FLOATING HEARTS
+========================================= */
+
+.hearts {
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 1;
+}
+
+
+.hearts span {
+    position: absolute;
+
+    bottom: -50px;
+
+    font-size: 22px;
+
+    opacity: .6;
+
+    animation:
+        floatHeart 9s linear infinite;
+}
+
+
+.hearts span:nth-child(1) {
+    left: 5%;
+    animation-delay: 0s;
+}
+
+
+.hearts span:nth-child(2) {
+    left: 18%;
+    animation-delay: 2s;
+}
+
+
+.hearts span:nth-child(3) {
+    left: 32%;
+    animation-delay: 5s;
+}
+
+
+.hearts span:nth-child(4) {
+    left: 48%;
+    animation-delay: 1s;
+}
+
+
+.hearts span:nth-child(5) {
+    left: 62%;
+    animation-delay: 4s;
+}
+
+
+.hearts span:nth-child(6) {
+    left: 75%;
+    animation-delay: 7s;
+}
+
+
+.hearts span:nth-child(7) {
+    left: 87%;
+    animation-delay: 3s;
+}
+
+
+.hearts span:nth-child(8) {
+    left: 95%;
+    animation-delay: 6s;
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes teddyFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-12px);
+    }
+}
+
+
+@keyframes heartBeat {
+
+    0%,
+    100% {
+        transform:
+            scale(1);
+    }
+
+    50% {
+        transform:
+            scale(1.18);
+    }
+}
+
+
+@keyframes floatHeart {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg)
+            scale(.8);
+
+        opacity: 0;
+    }
+
+    10% {
+        opacity: .6;
+    }
+
+    50% {
+        opacity: .8;
+    }
+
+    100% {
+        transform:
+            translateY(-110vh)
+            rotate(360deg)
+            scale(1.3);
+
+        opacity: 0;
+    }
+}
+
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes teddyAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            scale(.8);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            scale(1);
+    }
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .counter {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .container {
+        width: 94%;
+
+        padding-top: 35px;
+    }
+
+
+    .teddy-section {
+        min-height: 230px;
+
+        gap: 8px;
+
+        transform:
+            scale(.78);
+    }
+
+
+    .heart-between {
+        font-size: 38px;
+    }
+
+
+    .couple-names {
+        font-size: 30px;
+
+        gap: 8px;
+    }
+
+
+    .start-date {
+        font-size: 12px;
+    }
+
+
+    .counter {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 10px;
+
+        margin-top: 30px;
+    }
+
+
+    .time-box {
+        padding: 18px 8px;
+
+        border-radius: 16px;
+    }
+
+
+    .time-box strong {
+        font-size: 27px;
+    }
+
+
+    .time-box span {
+        font-size: 11px;
+    }
+
+
+    .message {
+        margin-top: 30px;
+
+        padding: 22px 17px;
+    }
+
+
+    .message h2 {
+        font-size: 23px;
+    }
+
+
+    .message p {
+        font-size: 13px;
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+
+    .teddy-section {
+        transform:
+            scale(.68);
+
+        margin-top: -15px;
+
+        margin-bottom: -15px;
+    }
+
+
+    .couple-names {
+        font-size: 25px;
+    }
+
+
+    .time-box strong {
+        font-size: 24px;
+    }
+
+}
